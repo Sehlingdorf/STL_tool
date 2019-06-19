@@ -1,0 +1,9 @@
+# STL files
+*.stl
+
+# VS-Code folder
+.vscode
+
+# c++ excecutables / object files
+*.out
+*.o
