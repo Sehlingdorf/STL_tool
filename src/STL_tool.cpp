@@ -11,10 +11,29 @@ STL_tool::~STL_tool() { }
 
 vector<Triangle> STL_tool::ReadASCII(string filename) {
   SurfTria.clear();
-  ofstream STLfile;
+  ifstream STLfile;
   STLfile.open(filename);
+  //if (!STLfile.is_open()) end;
 
-  // Todo
+  bool read_normal = true; // Set to false for automatic computation 
+  string word;
+  float tri_array[9];
+  while(STLfile >> word) {
+    
+    if (word == "normal" && read_normal) {
+      // read normal
+      // Todo
+    } else if (word == "vertex") {
+
+      // read the three coordinates of three points
+      STLfile >> tri_array[0]; STLfile >> tri_array[1]; STLfile >> tri_array[2]; STLfile >> word;
+      STLfile >> tri_array[3]; STLfile >> tri_array[4]; STLfile >> tri_array[5]; STLfile >> word;
+      STLfile >> tri_array[6]; STLfile >> tri_array[7]; STLfile >> tri_array[8];
+      SurfTria.push_back(Triangle(tri_array));
+      
+    }
+    
+  } // while
 
   STLfile.close();
   cout << "Done reading ASCII STL file." << endl;
@@ -51,9 +70,7 @@ vector<Triangle> STL_tool::ReadBinary(string filename) {
   SurfTria.clear();
 
   FILE* file;
-  file = fopen(filename.c_str(
-
-  ), "r");
+  file = fopen(filename.c_str(), "r");
   float tri_array[9];
 
   if(file != NULL) {
@@ -70,7 +87,7 @@ vector<Triangle> STL_tool::ReadBinary(string filename) {
       fread(tri_array, sizeof(float), 9, file);
       fseek(file, 2, SEEK_CUR); // useless unsigned short
       
-      SurfTria.push_back(Triangle(tri_array));      
+      SurfTria.push_back(Triangle(tri_array));
     }
   } else {
     cout << "Error opening file!" << endl;

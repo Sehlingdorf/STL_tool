@@ -9,12 +9,13 @@ using namespace std;
 int main() {
 
   STL_tool stl;
-  vector<Triangle> sphere = CreateTriangleSphere(1.0, 4, 3);
+  vector<Triangle> sphere = CreateTriangleSphere(1.0, 10, 10);
   stl.WriteASCII(sphere, "ascii.stl");
   stl.WriteBinary(sphere, "binary.stl");
-  sphere = stl.ReadBinary("binary.sl");
+  sphere = stl.ReadBinary("binary.stl");
   stl.WriteASCII(sphere, "ascii2.stl");
   sphere = stl.ReadASCII("ascii2.stl");
+  stl.WriteASCII(sphere, "ascii3.stl");
 
   return 0;
 }
