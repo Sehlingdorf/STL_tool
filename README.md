@@ -1,6 +1,6 @@
 # STL tool
 
-A little C++ programm that reads and writes ASCII or Binary STL ("STereoLithography" or "Standard Triangle Language").
+A little C++ programm that reads and writes ASCII or Binary [STL](https://en.wikipedia.org/wiki/STL_(file_format)) ("STereoLithography" or "Standard Triangle Language"). 
 
 ## What's in
 
