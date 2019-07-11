@@ -9,6 +9,6 @@ A little C++ programm that reads and writes ASCII or Binary STL ("STereoLithogra
 
 If you want to create a .stl file you need to fill a `std::vector<Triangle>` with the surface traingulation and pass it to a `Write*` routine of the STL_tool class.
 
-Reading a .stl file returns a `std::vector<Triangle>`.
+Reading a .stl file returns a `std::vector<Triangle>` which can then be further processsed.
 
 * `surface_creation.hpp` is a sample collection to create `std::vector<Triangle>` which can then be written to .stl on viewed in e.g. [Paraview](https://www.paraview.org).
