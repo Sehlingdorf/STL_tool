@@ -1,8 +1,9 @@
 #include <iostream>
 #include <vector>
-#include "include/triangle.hpp"
-#include "include/STL_tool.hpp"
-#include "include/surface_creation.hpp"
+
+#include "../include/triangle.hpp"
+#include "../include/STL_tool.hpp"
+#include "../include/surface_creation.hpp"
 
 using namespace std;
 

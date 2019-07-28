@@ -12,3 +12,11 @@ If you want to create a .stl file you need to fill a `std::vector<Triangle>` wit
 Reading a .stl file returns a `std::vector<Triangle>` which can then be further processsed.
 
 * `surface_creation.hpp` is a sample collection to create `std::vector<Triangle>` which can then be written to .stl on viewed in e.g. [Paraview](https://www.paraview.org).
+
+## Build with meson
+```
+meson builddir
+cd builddir
+ninja
+```
+

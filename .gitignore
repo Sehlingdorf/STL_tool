@@ -7,3 +7,6 @@
 # c++ excecutables / object files
 *.out
 *.o
+
+# meson builddir
+builddir/
